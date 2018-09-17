@@ -21,11 +21,14 @@ form="""
           margin:10px 0; 
           width:540px;
           height:120px;
-      }} 
+      }}
+ 
+           
+      
     </style>
   </head>
   <body>
-    <form method="POST">
+    <form method="post">
       <label>Rotate by:
        <input name = "rot" type="text" value = "0"/>
       </label>
@@ -33,13 +36,15 @@ form="""
         <textarea name="text">{0}</textarea>
       </label>
       <input type ="submit"/>
+
+      
+
   </body>
 </html>
 """
-
 @app.route("/")
 def index():
-    return form.format("")
+  return form
 
 @app.route("/", methods =['POST'])
 def encrypt():
